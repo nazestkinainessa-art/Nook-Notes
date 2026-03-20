@@ -1,10 +1,14 @@
-function App() {
-  return (
-    <div className="app-container">
-      <h1>Nook Notes</h1>
-
+function App (){
+  return(
+    <div className = "app-wrapper"> 
+    <header>Nook Notes</header>
+    <main>
+      <section> <p>...</p> </section>
+      <section> <p>...</p> </section>
+    </main>
+    <footer><p>...</p></footer>
     </div>
   )
 }
 
-export default App
+export default App;
