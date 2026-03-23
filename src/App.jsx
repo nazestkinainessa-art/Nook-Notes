@@ -1,12 +1,16 @@
 function App (){
   return(
     <div className = "app-wrapper"> 
-    <header>Nook Notes</header>
-    <main>
-      <section> <p>...</p> </section>
-      <section> <p>...</p> </section>
+    <header className="header">Nook Notes</header>
+    <main className="main">
+      <div className="main__container">
+        <section className="main__calendar"> 
+          <p>Текст текст текст текст текст текст текст текст текст текст текст текст 
+            текст текст текст текст р
+            </p> </section>
+      </div>
+      <section className="main__task"> <p>...</p> </section>
     </main>
-    <footer><p>...</p></footer>
     </div>
   )
 }

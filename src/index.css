@@ -4,3 +4,27 @@ body{
   min-height: 100vh;
 }
 
+.app-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__container{
+  background-color: #F5F5F5;
+  max-width: 800px;
+  min-height: 500px;
+  margin: 60px auto;
+  padding: 30px 20px 30px;
+  border-radius: 40px;
+}
