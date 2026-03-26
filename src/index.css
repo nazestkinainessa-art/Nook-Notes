@@ -25,6 +25,33 @@ body{
   max-width: 800px;
   min-height: 500px;
   margin: 60px auto;
-  padding: 30px 20px 30px;
+  padding: 150px 20px 30px;
   border-radius: 40px;
+}
+
+.main__calendar{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid #755D48; 
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.calendar {
+  height: 80px;
+  border: 0.5px solid #755D48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F0E9E3;
+}
+
+.weekday {
+  height: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.5px solid #755D48;
 }
