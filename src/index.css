@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #ebebe4;
   margin: 0;
   min-height: 100vh;
@@ -20,8 +20,8 @@ body{
   justify-content: space-between;
 }
 
-.main__container{
-  background-color: #F5F5F5;
+.main__container {
+  background-color: #f5f5f5;
   max-width: 800px;
   min-height: 500px;
   margin: 60px auto;
@@ -29,29 +29,30 @@ body{
   border-radius: 40px;
 }
 
-.main__calendar{
+.main__calendar {
+  background-color: #755d48;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  border: 1px solid #755D48; 
+  border: 1px solid #755d48;
   border-radius: 12px;
   overflow: hidden;
+  gap: 1px;
 }
 
 .calendar {
   height: 80px;
-  border: 0.5px solid #755D48;
+  background-color: #f0e9e3;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F0E9E3;
 }
 
 .weekday {
   height: 40px;
   font-weight: 400;
   font-size: 18px;
+  background-color: #fdf9f6;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 0.5px solid #755D48;
 }
