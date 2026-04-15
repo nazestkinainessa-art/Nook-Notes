@@ -62,3 +62,12 @@ body {
   align-items: center;
   justify-content: right;
 }
+
+.calendar__day--today {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.calendar__day--selected {
+  background-color: blue;
+}

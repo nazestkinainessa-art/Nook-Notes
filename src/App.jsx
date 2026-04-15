@@ -4,13 +4,15 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 function App() {
   let days = Array(42).fill(null);
   const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-  const [year, setYear] = useState(2026);
-  const [month, setMonth] = useState(2);
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth());;
   let day = new Date(year, month, 1);
   let startsFrom = day.getDay() === 0 ? 6 : day.getDay() - 1;
   let daysInMonth = new Date(year, month + 1, 0).getDate();
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const monthShort = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+  let today = new Date();
+  let [selectedDay, setSelectedDay] = useState(null);
   return (
     <div className="app-wrapper">
       <header className="header">Nook Notes</header>
@@ -54,12 +56,26 @@ function App() {
                 ))}
                 {days.map((item, index) => {
                   let dayNumber = index - startsFrom + 1;
+                  let isToday =
+                  dayNumber === today.getDate() &&
+                  month === today.getMonth() &&
+                  year === today.getFullYear() ;
+                  let isSelected = dayNumber === selectedDay;
+                  let dayClass = "calendar__day"; 
+                  if (isToday) dayClass += " calendar__day--today"; 
+                  if (isSelected) dayClass += " calendar__day--selected";
                   return (
-                    <div key={index} className="calendar__day">
-                      {dayNumber > 0 && dayNumber <= daysInMonth
-                        ? dayNumber
-                        : ""}
-                    </div>
+                    <div 
+                    key={index} 
+                    className={dayClass} 
+                    onClick={() => {
+                      if (dayNumber > 0 && dayNumber <= daysInMonth) {
+                        setSelectedDay(dayNumber);
+                      }
+                    }}
+                    >
+                      {dayNumber > 0 && dayNumber <= daysInMonth ? dayNumber : ""}
+                      </div>
                   );
                 })}
               </div>
