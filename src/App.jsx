@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { TaskPage } from "../TaskPage";
 
 function App() {
   let days = Array(42).fill(null);
@@ -9,7 +10,7 @@ function App() {
   let day = new Date(year, month, 1);
   let startsFrom = day.getDay() === 0 ? 6 : day.getDay() - 1;
   let daysInMonth = new Date(year, month + 1, 0).getDate();
-  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  //const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const monthShort = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   const monthLittle = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let today = new Date();
@@ -101,16 +102,5 @@ function App() {
   );
 }
 
-function TaskPage(props) {
-  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const date = new Date(props.year, props.month, props.day);
-  const dayIndex = date.getDay();
-  return (
-    <div>
-      <h1>{dayNames[dayIndex]}, {props.monthList[props.month]} {props.day}</h1>
-      <button onClick={props.goBack}>Назад</button>
-    </div>
-  );
-}
 
 export default App;
